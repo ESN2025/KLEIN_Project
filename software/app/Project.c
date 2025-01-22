@@ -119,7 +119,6 @@ void calibrateAcc(){
 
 //IRQ FUNCTION
 static void readSample(void * context, alt_u32 id){
-	//XYZ
 	alt_u32 value = AccReadData(0x32 + sampleOffset);
 	IOWR_ALTERA_AVALON_PIO_DATA(PIO_OUT_DATA_BASE,convertDataToDisplayFormat(value));
 	IOWR_ALTERA_AVALON_PIO_DATA(PIO_OUT_LED_BASE,ledId);
